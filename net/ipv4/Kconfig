@@ -679,12 +679,6 @@ config TCP_CONG_BBR
 	  AQM schemes that do not provide a delay signal. It requires the fq
 	  ("Fair Queue") pacing packet scheduler.
 
-config TCP_CONG_PIXIE
-	tristate "PIXIE TCP"
-	default y
-	help
-	  PIXIE TCP congestion control algorithm.
-
 choice
 	prompt "Default TCP congestion control"
 	default DEFAULT_CUBIC
@@ -731,7 +725,7 @@ endchoice
 
 endif
 
-config TCP_CONG_PIXIE
+config TCP_CONG_CUBIC
 	tristate
 	depends on !TCP_CONG_ADVANCED
 	default y
@@ -762,3 +756,9 @@ config TCP_MD5SIG
 	  on the Internet.
 
 	  If unsure, say N.
+
+config TCP_CONG_PIXIE
+	tristate "PIXIE TCP"
+	default y
+	help
+	  PIXIE TCP congestion control algorithm.
