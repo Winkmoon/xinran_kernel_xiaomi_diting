@@ -688,7 +688,7 @@ config TCP_CONG_PIXIE
 
 choice
 	prompt "Default TCP congestion control"
-	default DEFAULT_CUBIC
+	default DEFAULT_PIXIE
 	help
 	  Select the TCP congestion control that will be used by default
 	  for all connections.
@@ -732,7 +732,7 @@ endchoice
 
 endif
 
-config TCP_CONG_CUBIC
+config TCP_CONG_PIXIE
 	tristate
 	depends on !TCP_CONG_ADVANCED
 	default y
