@@ -3567,9 +3567,7 @@ int __weak module_frob_arch_sections(Elf_Ehdr *hdr,
 static char *module_blacklist;
 static char *custom_module_blacklist[] = {
     /*sched-walt*/
-	"sched-walt",
-	/*qcom-cpufreq-hw*/
-    "qcom-cpufreq-hw"
+	"sched-walt","qcom-cpufreq-hw"
 };
 
 static bool blacklisted(const char *module_name)
